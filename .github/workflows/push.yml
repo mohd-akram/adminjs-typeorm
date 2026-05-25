@@ -6,12 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
       - name: Setup
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v6
         with:
-          node-version: '18.x'
-      - uses: actions/cache@v2
+          node-version: '24.x'
+      - uses: actions/cache@v5
         id: yarn-cache
         with:
           path: node_modules
@@ -33,7 +33,7 @@ jobs:
       POSTGRES_USER: postgres
     services:
       postgres:
-        image: postgres:10.8
+        image: postgres:18.4
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -44,12 +44,12 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
       - name: Setup
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v6
         with:
-          node-version: '18.x'
-      - uses: actions/cache@v2
+          node-version: '24.x'
+      - uses: actions/cache@v5
         id: yarn-cache
         with:
           path: node_modules
@@ -65,19 +65,19 @@ jobs:
         run: yarn run migrate
       - name: Test
         run: yarn test
- 
+
   publish:
     name: Publish
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
       - name: Setup
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v6
         with:
-          node-version: '18.x'
-      - uses: actions/cache@v2
+          node-version: '24.x'
+      - uses: actions/cache@v5
         id: yarn-cache
         with:
           path: node_modules
