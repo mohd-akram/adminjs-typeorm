@@ -42,7 +42,7 @@
   "license": "MIT",
   "peerDependencies": {
     "adminjs": "^7.0.0",
-    "typeorm": "~0.3.0"
+    "typeorm": "~0.3.0 || ^1.0.0"
   },
   "optionalDependencies": {},
   "devDependencies": {
@@ -70,7 +70,7 @@
     "semantic-release-slack-bot": "^4.0.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.2",
-    "typeorm": "^0.3.12",
+    "typeorm": "^1.0.0",
     "typescript": "^4.9.5"
   }
 }
